@@ -409,6 +409,8 @@
     /* ── Calendar column ── */
     .dash-cal {
       border-right: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
     }
     .dash-cal-topbar {
       display: flex; align-items: center; gap: 16px;
@@ -436,6 +438,8 @@
     /* Calendar grid */
     .dash-cal-grid {
       display: grid; grid-template-columns: repeat(7, 1fr);
+      flex: 1;
+      align-content: stretch;
     }
     .dash-cal-hdr {
       padding: 10px 8px; text-align: center;
