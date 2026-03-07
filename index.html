@@ -367,7 +367,7 @@
     }
 
     /* FEATURES / CALENDAR + CHAT */
-    #features { max-width: 1340px; }
+    #features { max-width: 1100px; }
     .features-grid { margin-top: 48px; }
 
     /* ── APP PREVIEW DASHBOARD ── */
@@ -1198,6 +1198,7 @@
       font-size: 13px;
       color: var(--text);
       font-weight: 500;
+      transition: opacity 0.4s ease;
     }
 
     /* SCARCITY COUNTER */
@@ -1392,7 +1393,7 @@
   <!-- HERO -->
   <section class="hero">
     <img src="logo.png" alt="Second Breakfast Pancakes" class="hero-logo">
-    <h1>The <span class="linkedin-badge">LinkedIn</span> agency<br>that works behind the scenes<br>— invite only.</h1>
+    <h1>The <span class="linkedin-badge">LinkedIn</span> agency<br>that works behind the scenes.</h1>
     <p class="subtitle">
       We manage a limited number of company pages. We only take on clients we can do great work for. That's why we're invite-only. Yours could be next.
     </p>
@@ -1408,8 +1409,31 @@
     <!-- Trust Bar -->
     <div class="trust-bar">
       <span class="trust-label">Trusted by teams at</span>
-      <span class="trust-logos">fast-growing B2B SaaS companies in CZ, PL, DE &amp; UK</span>
+      <span class="trust-logos" id="trust-rotate"></span>
     </div>
+    <script>
+    (function(){
+      var phrases = [
+        "fast-growing B2B SaaS companies in CZ, PL, DE & UK",
+        "Series A startups scaling their brand presence",
+        "marketing teams who'd rather not post themselves",
+        "fintech companies with zero time for content",
+        "remote-first teams across Central Europe",
+        "founders who hate writing LinkedIn posts"
+      ];
+      var i = 0;
+      var el = document.getElementById('trust-rotate');
+      el.textContent = phrases[0];
+      setInterval(function(){
+        el.style.opacity = '0';
+        setTimeout(function(){
+          i = (i + 1) % phrases.length;
+          el.textContent = phrases[i];
+          el.style.opacity = '1';
+        }, 400);
+      }, 3000);
+    })();
+    </script>
 
     <!-- Proof Stats -->
     <div class="proof-bar">
