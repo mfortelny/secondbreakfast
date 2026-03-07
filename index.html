@@ -654,16 +654,19 @@
     }
     .pricing-card .pricing-badge {
       position: absolute;
-      top: 16px;
-      right: -32px;
+      top: 50px;
+      right: -34px;
       background: var(--text);
       color: var(--bg);
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 1px;
-      padding: 6px 40px;
+      letter-spacing: 0.5px;
+      padding: 8px 50px;
       transform: rotate(45deg);
+      white-space: nowrap;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.15);
     }
     .pricing-price {
       font-size: 56px;
@@ -1140,6 +1143,197 @@
     footer a { color: var(--muted); text-decoration: none; }
     footer a:hover { color: var(--text); }
 
+    /* INVITE CODE ROW */
+    .invite-code-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 20px;
+    }
+    .invite-input {
+      padding: 10px 16px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 14px;
+      font-family: inherit;
+      outline: none;
+      width: 220px;
+      transition: border-color 0.2s;
+    }
+    .invite-input:focus { border-color: var(--text); }
+    .invite-btn {
+      padding: 10px 20px;
+      background: var(--text);
+      color: var(--bg);
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: inherit;
+      transition: opacity 0.2s;
+    }
+    .invite-btn:hover { opacity: 0.85; }
+
+    /* TRUST BAR */
+    .trust-bar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 36px;
+      padding: 12px 24px;
+      background: var(--accent);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+    .trust-label {
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+    .trust-logos {
+      font-size: 13px;
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    /* SCARCITY COUNTER */
+    .scarcity-counter {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 12px;
+      padding: 6px 16px;
+      background: #fff8e6;
+      border: 1px solid #f0c66e;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .scarcity-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #22c55e;
+      animation: scarcityPulse 2s ease-in-out infinite;
+    }
+    @keyframes scarcityPulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    /* WAITLIST MODAL */
+    .waitlist-modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .waitlist-box {
+      background: #fff;
+      border-radius: 20px;
+      padding: 48px 40px;
+      max-width: 480px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.15);
+    }
+    .waitlist-box h3 {
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+    .waitlist-box .wl-sub {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 28px;
+      line-height: 1.6;
+    }
+    .waitlist-box label {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--muted);
+      margin-bottom: 6px;
+      margin-top: 16px;
+    }
+    .waitlist-box label:first-of-type { margin-top: 0; }
+    .waitlist-box input,
+    .waitlist-box select {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 14px;
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.2s;
+      background: #fff;
+    }
+    .waitlist-box input:focus,
+    .waitlist-box select:focus { border-color: var(--text); }
+    .waitlist-box .wl-submit {
+      width: 100%;
+      margin-top: 24px;
+      padding: 14px;
+      background: var(--text);
+      color: var(--bg);
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.2s;
+    }
+    .waitlist-box .wl-submit:hover {
+      opacity: 0.85;
+      transform: translateY(-1px);
+    }
+    .waitlist-close {
+      position: absolute;
+      top: 16px; right: 20px;
+      background: none;
+      border: none;
+      font-size: 24px;
+      color: var(--muted);
+      cursor: pointer;
+      line-height: 1;
+    }
+    .waitlist-close:hover { color: var(--text); }
+    .waitlist-success {
+      display: none;
+      text-align: center;
+      padding: 20px 0;
+    }
+    .waitlist-success .ws-icon {
+      font-size: 48px;
+      margin-bottom: 16px;
+    }
+    .waitlist-success h4 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .waitlist-success p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
     /* RESPONSIVE */
     @media (max-width: 1100px) {
       .dash-grid { grid-template-columns: 1fr 1fr; }
@@ -1158,6 +1352,10 @@
       .hero { padding-top: 80px; padding-bottom: 60px; }
       .proof-bar { gap: 24px; flex-wrap: wrap; }
       footer { flex-direction: column; gap: 12px; text-align: center; }
+      .invite-code-row { flex-direction: column; width: 100%; max-width: 300px; }
+      .invite-input { width: 100%; }
+      .trust-bar { flex-direction: column; text-align: center; gap: 4px; }
+      .waitlist-box { padding: 32px 24px; }
     }
   </style>
 </head>
@@ -1184,28 +1382,55 @@
     </div>
     <div class="nav-links">
       <a href="#features">Features</a>
-      <a href="#testimonials">Proof</a>
+      <a href="#testimonials">Clients</a>
       <a href="#benefits">Benefits</a>
       <a href="#pricing">Pricing</a>
-      <a href="https://eat.thesecondbreakfast.com" class="cta-btn" style="margin-left: 32px;">Free Trial</a>
+      <a href="#waitlist" class="cta-btn" style="margin-left: 32px;" onclick="document.getElementById('waitlist-modal').style.display='flex';return false;">Request Access</a>
     </div>
   </nav>
 
   <!-- HERO -->
   <section class="hero">
     <img src="logo.png" alt="Second Breakfast Pancakes" class="hero-logo">
-    <h1>We run your<br>company <span class="linkedin-badge">LinkedIn</span> page<br>for you.</h1>
+    <h1>The <span class="linkedin-badge">LinkedIn</span> agency<br>that works behind the scenes<br>— invite only.</h1>
     <p class="subtitle">
-      Nobody wants to run the company LinkedIn page. Not you. Not Karen from marketing. Most company pages look empty, inactive or post cookie-cutter content. We want to run it and make your company page look shiny, professional and active.
+      We manage a limited number of company pages. We only take on clients we can do great work for. That's why we're invite-only. Yours could be next.
     </p>
-    <a href="https://eat.thesecondbreakfast.com" class="cta-btn">Free Trial</a>
-    <p class="tiny-note">you don't need to pay us anything to try it</p>
+    <a href="#waitlist" class="cta-btn" onclick="document.getElementById('waitlist-modal').style.display='flex';return false;">Request Early Access</a>
+    <p class="tiny-note">Or skip the waitlist — get a referral from an existing Second Breakfast customer</p>
+
+    <!-- Invite Code Input -->
+    <div class="invite-code-row">
+      <input type="text" placeholder="Have an invite code?" class="invite-input" id="invite-code-input">
+      <button class="invite-btn" onclick="window.location.href='https://eat.thesecondbreakfast.com?code='+document.getElementById('invite-code-input').value">Enter &rarr;</button>
+    </div>
+
+    <!-- Trust Bar -->
+    <div class="trust-bar">
+      <span class="trust-label">Trusted by teams at</span>
+      <span class="trust-logos">fast-growing B2B SaaS companies in CZ, PL, DE &amp; UK</span>
+    </div>
+
+    <!-- Proof Stats -->
+    <div class="proof-bar">
+      <div class="proof-stat">
+        <div class="num">50+</div>
+        <div class="label">Company pages managed</div>
+      </div>
+      <div class="proof-stat">
+        <div class="num">12,000+</div>
+        <div class="label">Posts published</div>
+      </div>
+      <div class="proof-stat">
+        <div class="num">4.2M</div>
+        <div class="label">Impressions generated</div>
+      </div>
+    </div>
   </section>
 
-  <!--
   <hr class="divider">
 
-  TESTIMONIALS
+  <!-- TESTIMONIALS -->
   <section id="testimonials">
     <div class="section-label">Client Testimonials</div>
     <h2>They said nice things about us and we promised<br>we would keep their names secret.</h2>
@@ -1327,7 +1552,6 @@
     </div>
     <p class="testimonials-note">* we removed the company names because these people seemed nervous when we asked and we didn't want to push it</p>
   </section>
-  -->
 
   <hr class="divider">
 
@@ -1336,6 +1560,7 @@
     <div class="section-label">How It Works</div>
     <h2>Autopilot on your company<br>page content. You can still<br>jump in anytime.</h2>
     <p class="subtitle">You open the app. We show you what we made. You say yes, or you say "can you change this one thing." We change it. You say yes. You close the app. You are done. We are very happy.</p>
+    <p class="subtitle" style="margin-top: 12px; font-style: italic; font-size: 15px;">Every post we make is publicly visible on LinkedIn — that's how most of our clients found us.</p>
 
     <div class="features-grid">
       <div class="dash-shell">
@@ -1862,16 +2087,17 @@
   <!-- PRICING -->
   <section id="pricing">
     <div class="section-label">What It Costs</div>
-    <h2>Try it free. Pay when<br>you're sure. Simple.</h2>
-    <p class="subtitle">Start with 5 free posts and every feature included. No credit card. No pressure. If you like it, $49/mo and we keep going. If not, that's okay too.</p>
+    <h2>Earn your spot. Stay because<br>it's worth it. Simple.</h2>
+    <p class="subtitle">Access is gated — you'll need either an invite code from an existing client or approval from our waitlist. We keep it small so we can keep it good.</p>
 
     <div class="pricing-grid">
 
       <div class="pricing-card free-tier">
-        <div class="pricing-badge">Start Here</div>
+        <div class="pricing-badge">Founding Member</div>
         <div class="pricing-price">$0<span>/mo</span></div>
-        <p class="pricing-sub">5 posts included &middot; no credit card &middot; no tricks</p>
-        <ul class="pricing-features">
+        <p class="pricing-sub">5 posts included &middot; invite or waitlist required</p>
+        <div class="scarcity-counter"><span class="scarcity-dot"></span> 14 founding spots remaining</div>
+        <ul class="pricing-features" style="margin-top: 24px;">
           <li>5 posts to try the whole thing</li>
           <li>LinkedIn integration &amp; one-click connect</li>
           <li>Past post analytics &amp; tone of voice learning</li>
@@ -1880,23 +2106,24 @@
           <li>Fully autonomous posting if you want</li>
           <li>Brand identity &amp; voice matching</li>
         </ul>
-        <a href="https://eat.thesecondbreakfast.com" class="cta-btn">Start Free &rarr;</a>
+        <a href="#waitlist" class="cta-btn" onclick="document.getElementById('waitlist-modal').style.display='flex';return false;">Request Early Access &rarr;</a>
       </div>
 
       <div class="pricing-card">
-        <div class="pricing-badge">Genuinely Good Value</div>
+        <div class="pricing-badge">Full Access</div>
         <div class="pricing-price">$49<span>/mo</span></div>
         <p class="pricing-sub">per month &middot; cancel whenever &middot; we won't hold it against you</p>
         <ul class="pricing-features">
-          <li>Everything in free, forever</li>
+          <li>Everything in founding, forever</li>
           <li>Unlimited posts (3+ per week, more when things happen)</li>
           <li>LinkedIn integration &amp; one-click connect</li>
           <li>Past post analytics &amp; tone of voice learning</li>
           <li>Text posts, carousels, graphics</li>
           <li>Job posts, launches, company news, team moments</li>
           <li>As many revisions as you need (we truly do not mind)</li>
+          <li>Your own referral link to skip friends past the waitlist</li>
         </ul>
-        <a href="https://eat.thesecondbreakfast.com" class="cta-btn">Start for $49/mo &rarr;</a>
+        <a href="#waitlist" class="cta-btn" onclick="document.getElementById('waitlist-modal').style.display='flex';return false;">Request Access &rarr;</a>
       </div>
 
     </div>
@@ -1907,12 +2134,50 @@
   <!-- FINAL CTA -->
   <section class="final-cta" id="cta">
     <img src="logo.png" alt="" class="cta-pancake">
-    <div class="section-label">Ready When You Are</div>
-    <h2>Just leave your company page to us.<br>It's just not worth your time.</h2>
-    <p class="subtitle">Hand us your company LinkedIn. We will take care of it. You go run your actual business. This is a fair trade and we feel good about it.</p>
-    <a href="https://eat.thesecondbreakfast.com" class="cta-btn">Try for free</a>
-    <p class="tiny-note" style="margin-top: 16px;">free to start &middot; $49/mo after &middot; no contracts &middot; we are genuinely looking forward to this</p>
+    <div class="section-label">Limited Spots Available</div>
+    <h2>We only take on clients we can<br>do great work for.</h2>
+    <p class="subtitle">That's why we're invite-only. Request access or grab a referral from someone who's already in. Either way — your company LinkedIn is about to get a lot better.</p>
+    <a href="#waitlist" class="cta-btn" onclick="document.getElementById('waitlist-modal').style.display='flex';return false;">Request Early Access</a>
+    <p class="tiny-note" style="margin-top: 16px;">invite-only &middot; $49/mo after trial &middot; no contracts &middot; we are genuinely looking forward to this</p>
   </section>
+
+  <!-- WAITLIST MODAL -->
+  <div class="waitlist-modal" id="waitlist-modal" onclick="if(event.target===this)this.style.display='none'">
+    <div class="waitlist-box">
+      <button class="waitlist-close" onclick="this.parentElement.parentElement.style.display='none'">&times;</button>
+
+      <div id="wl-form-view">
+        <h3>Request Early Access</h3>
+        <p class="wl-sub">We only take on clients we can do great work for. Join the waitlist or enter your invite code to skip ahead.</p>
+
+        <label>Work Email</label>
+        <input type="email" placeholder="you@company.com" id="wl-email">
+
+        <label>Company LinkedIn URL</label>
+        <input type="url" placeholder="linkedin.com/company/yourcompany" id="wl-linkedin">
+
+        <label>How did you hear about us?</label>
+        <select id="wl-source">
+          <option value="">Select one...</option>
+          <option value="referral">Referral from a client</option>
+          <option value="linkedin">LinkedIn</option>
+          <option value="wom">Word of mouth</option>
+          <option value="other">Other</option>
+        </select>
+
+        <label>Invite Code (optional)</label>
+        <input type="text" placeholder="e.g. SB-XXXX" id="wl-code">
+
+        <button class="wl-submit" onclick="document.getElementById('wl-form-view').style.display='none';document.getElementById('wl-success-view').style.display='block';">Join the Waitlist</button>
+      </div>
+
+      <div class="waitlist-success" id="wl-success-view">
+        <div class="ws-icon">🥞</div>
+        <h4>You're on the list.</h4>
+        <p>We'll review your application and get back to you soon. If you have a referral from an existing client, reply to our confirmation email with their name and we'll move you up.</p>
+      </div>
+    </div>
+  </div>
 
   <!-- FOOTER -->
   <footer>
